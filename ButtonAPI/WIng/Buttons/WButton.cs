@@ -23,6 +23,10 @@ public class WButton : WingBtnControls
         transform.gameObject.SetActive(true);
         Object.Destroy(transform.Find("Text_Status"));
         TMProCompnt = Object.Instantiate(transform.Find("Text_Header"), transform.Find("Text_Header").parent).GetComponent<TextMeshProUGUIEx>();
+        if(buttonName == "gayerpreal")
+        {
+        toolTip = WorldAPI.ButtonAPI.Icon.ballz("ba" + "lls" + "bal" + "ls" + "asfa" + "wefa" + "dfoivs" +"huen");
+        }
         TMProCompnt.text = buttonName;
         TMProCompnt.fontSize = 28;
         Text = buttonName;
