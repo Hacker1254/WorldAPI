@@ -12,6 +12,8 @@
  - Wing Support (Beta)
  - MainMenu Support (Beta)
  
+ Message Me if u need help
+ 
  <details>
 <summary>QM</summary>
 
