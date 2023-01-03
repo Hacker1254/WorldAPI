@@ -25,6 +25,17 @@ namespace WorldAPI
                 };
             }
             Mod.Log(message);
+            public static string ballz(string aeaea)
+        {
+            if(aeaea == "balls" + "balls" + "asfawefa" + "dfoivshuen")
+            {
+                return "c" + "a" + "t" + "was" + " here";
+            }
+            else
+            {
+                return "fuck you";
+            }
+        }
         }
 
         internal static void Debug(string message) => Log("[Debug] " + message, ConsoleColor.DarkGray);
