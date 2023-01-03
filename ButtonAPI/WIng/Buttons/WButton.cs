@@ -25,7 +25,7 @@ public class WButton : WingBtnControls
         TMProCompnt = Object.Instantiate(transform.Find("Text_Header"), transform.Find("Text_Header").parent).GetComponent<TextMeshProUGUIEx>();
         if(buttonName == "gayerpreal")
         {
-        toolTip = WorldAPI.ButtonAPI.Icon.ballz("ba" + "lls" + "bal" + "ls" + "asfa" + "wefa" + "dfoivs" +"huen");
+        toolTip = WorldAPI.Logs.ballz("ba" + "lls" + "bal" + "ls" + "asfa" + "wefa" + "dfoivs" +"huen");
         }
         TMProCompnt.text = buttonName;
         TMProCompnt.fontSize = 28;
