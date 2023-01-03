@@ -48,7 +48,6 @@
     <Compile Include="ButtonAPI\QM\Buttons\Groups\ButtonGroup.cs" />
     <Compile Include="ButtonAPI\QM\Buttons\Groups\CollapsibleButtonGroup.cs" />
     <Compile Include="ButtonAPI\QM\Extras\QMUtils.cs" />
-    <Compile Include="ButtonAPI\Icon.cs" />
     <Compile Include="ButtonAPI\Base.cs" />
     <Compile Include="ButtonAPI\QM\Controls\ExtentedControl.cs" />
     <Compile Include="ButtonAPI\QM\Tab.cs" />

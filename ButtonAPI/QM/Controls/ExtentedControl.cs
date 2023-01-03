@@ -72,7 +72,7 @@ namespace WorldAPI.ButtonAPI.Controls
             bg.gameObject.active = false;
         }
 
-        public void ResetTextPox() => gameObject.transform.Find("Text_H4").transform.localPosition = new Vector3(0, 0, 0);
+        internal void ResetTextPox() => gameObject.transform.Find("Text_H4").transform.localPosition = new Vector3(0, 0, 0);
 
         public void TurnHalf(HalfType Type, bool IsGroup) {
             ImgCompnt.gameObject.active = false;
