@@ -110,6 +110,10 @@ namespace WorldAPI.ButtonAPI
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().enabled = true;
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().verticalScrollbar = gameObject.transform.Find("ScrollRect/Scrollbar").GetOrAddComponent<Scrollbar>();
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
+                if (gameObject.childCount > 2) // Kitten is Gae
+                    foreach (var child in gameObject.GetChildren()) // Kitten is Gae
+                        if (child.name == "Header_H1" || child.name == "ScrollRect") continue;  // Kitten is Gae
+                        else Object.Destroy(child); // Kitten is Gae
 
                 gameObject.transform.Find("ScrollRect/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
 

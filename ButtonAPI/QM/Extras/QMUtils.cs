@@ -115,6 +115,15 @@ namespace WorldAPI.ButtonAPI.Extras
             return texture;
         }
 
+        public static List<GameObject> GetChildren(this Transform transform)
+        {
+            List<GameObject> list = new List<GameObject>();
+            for (int i = 0; i < transform.childCount; i++) {
+                GameObject gameObject = transform.GetChild(i).gameObject;
+                list.Add(gameObject);
+            }
+            return list;
+        }
 
         private static string lastsrt;
 
