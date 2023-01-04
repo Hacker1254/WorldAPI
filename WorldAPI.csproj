@@ -77,9 +77,6 @@
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\WorldLoader\UnhollowedAsm\Il2Cppmscorlib.dll</HintPath>
     </Reference>
-    <Reference Include="Runtime.Il2cpp">
-      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\Runtime.Il2cpp.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\WorldLoader\UnhollowedAsm\Unity.TextMeshPro.dll</HintPath>
     </Reference>

@@ -61,6 +61,37 @@ namespace WorldAPI.ButtonAPI.Extras
             }
         }
 
+        public static T GetOrAddComponent<T>(this GameObject gameObject) where T : Component
+        {
+            T component = gameObject.GetComponent<T>();
+            if (component == null)
+                return gameObject.AddComponent<T>();
+
+            return component;
+        }
+
+        public static T GetOrAddComponent<T>(this Transform transform) where T : Component
+        {
+            T component = transform.GetComponent<T>();
+            if (component == null)
+                return transform.gameObject.AddComponent<T>();
+
+            return component;
+        }
+
+        public static void DestroyChildren(this Transform transform, Func<Transform, bool> exclude)
+        {
+            for (var childcount = transform.childCount - 1; childcount >= 0; childcount--)
+                if (exclude == null || exclude(transform.GetChild(childcount)))
+                    UnityEngine.Object.DestroyImmediate(transform.GetChild(childcount).gameObject);
+        }
+
+        public static void DestroyChildren(this Transform transform) =>
+            transform.DestroyChildren(null);
+
+        public static void DestroyChildren(this GameObject gameObj) =>
+            gameObj.transform.DestroyChildren(null);
+
         public static Color HexToColor(string hexColor)
         {
             if (hexColor.IndexOf('#') != -1)
@@ -83,5 +114,21 @@ namespace WorldAPI.ButtonAPI.Extras
             texture.Apply();
             return texture;
         }
+
+
+        private static string lastsrt;
+
+        public static string Random(this string s, string spliter = " ", int length = 9, bool numbersOnly = false) {
+            System.Random randomString = new System.Random();
+            string element = numbersOnly ? "0123456789" : "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
+            var randomstr = new string((from temp in Enumerable.Repeat<string>(element, length)
+                                        select temp[randomString.Next(temp.Length)]).ToArray<char>());
+            if (randomstr == lastsrt)
+                randomstr = new string((from temp in Enumerable.Repeat<string>(element, length)
+                                        select temp[randomString.Next(temp.Length * 2)]).ToArray<char>());
+            lastsrt = randomstr;
+            return s + spliter + randomstr;
+        }
+
     }
 }

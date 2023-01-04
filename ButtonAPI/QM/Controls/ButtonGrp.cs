@@ -7,6 +7,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using WorldAPI.ButtonAPI.Buttons;
+using WorldAPI.ButtonAPI.Extras;
 using WorldAPI.Buttons;
 using WorldLoader.HookUtils;
 

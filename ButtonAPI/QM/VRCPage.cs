@@ -5,10 +5,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using VRC.UI.Core.Styles;
 using VRC.UI.Elements;
+using VRC.UI.Elements.Controls;
 using VRC.UI.Elements.Menus;
 using WorldAPI.ButtonAPI.Controls;
 using WorldAPI.ButtonAPI.Extras;
-using WorldLoader.HookUtils;
+using WorldAPI.ButtonAPI.Extras;
 using Object = UnityEngine.Object;
 
 namespace WorldAPI.ButtonAPI
@@ -109,6 +110,8 @@ namespace WorldAPI.ButtonAPI
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().enabled = true;
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().verticalScrollbar = gameObject.transform.Find("ScrollRect/Scrollbar").GetOrAddComponent<Scrollbar>();
                 gameObject.transform.Find("ScrollRect").GetOrAddComponent<ScrollRect>().verticalScrollbarVisibility = ScrollRect.ScrollbarVisibility.AutoHide;
+
+                gameObject.transform.Find("ScrollRect/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
 
                 page.GetComponent<Canvas>().enabled = true; // Fix for Late Menu Creation
                 page.GetComponent<CanvasGroup>().enabled = true; // Fix for Late Menu Creation

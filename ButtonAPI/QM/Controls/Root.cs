@@ -31,9 +31,6 @@ namespace WorldAPI.ButtonAPI.Controls
         public void SetTextColor(string Hex) =>
             TMProCompnt.text = $"<color={Hex}>{Text}</color>";
 
-        public void SetTextColor(ConsoleColor color) =>
-            TMProCompnt.text = ModUtils.ConsoleColorToHex(Text, color);
-
         public void SetRotation(Vector3 Poz) =>
             gameObject.transform.localRotation = Quaternion.Euler(Poz);
 
