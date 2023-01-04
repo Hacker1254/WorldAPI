@@ -61,6 +61,5 @@ namespace WorldAPI.ButtonAPI.Buttons
             : this(buttonGroup.buttonGroup.transform, text, stateChanged, DefaultState, OffTooltip, OnToolTip)
         {
         }
-
     }
 }
