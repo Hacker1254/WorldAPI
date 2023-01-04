@@ -16,6 +16,8 @@
  
  if you want something more simple and cleaner, i'd rec using [WTFBlazes Button's API](https://github.com/WTFBlaze/BlazesButtonAPI)
 
+[Im Writng the Docs Later, DM me for Help]
+
 
  <details>
 <summary>QM</summary>
