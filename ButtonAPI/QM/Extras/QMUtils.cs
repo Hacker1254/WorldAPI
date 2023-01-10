@@ -1,6 +1,4 @@
-﻿using Il2CppGen.Runtime;
-using Il2CppGen.Runtime.XrefScans;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
@@ -11,7 +9,6 @@ using UnityEngine;
 using VRC.UI.Elements;
 using VRC.UI.Elements.Controls;
 using WorldLoader.HookUtils;
-using WorldLoader.Il2CppGen.Internal.XrefScans;
 using Object = UnityEngine.Object;
 
 namespace WorldAPI.ButtonAPI.Extras
@@ -139,5 +136,28 @@ namespace WorldAPI.ButtonAPI.Extras
             return s + spliter + randomstr;
         }
 
+        internal static bool IsObfuscated(this string str)
+        {
+            foreach (var it in str)
+                if (!char.IsDigit(it) && !((it >= 'a' && it <= 'z') || (it >= 'A' && it <= 'Z')) && it != '_' &&
+                    it != '`' && it != '.' && it != '<' && it != '>')
+                    return true;
+
+            return false;
+        }
+
+        public static void RemoveUnknownComps(GameObject gameObject, Action<string> callBackOnDestroy = null) {
+            Component[] components = gameObject.GetComponents<Component>();
+            for (int D = 0; D < components.Length; D++)
+            {
+                var name = components[D].GetIl2CppType().Name;
+
+                if (name.IsObfuscated() && components[D].GetIl2CppType().BaseType.Name != nameof(TMPro.TextMeshProUGUI)) {
+                    Object.Destroy(components[D]);
+                    callBackOnDestroy?.Invoke(name);
+                }
+            }
+
+        }
     }
 }

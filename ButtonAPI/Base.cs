@@ -61,6 +61,7 @@ namespace WorldAPI
         public static GameObject ColpButtonGrp = null;
         public static GameObject ButtonGrp = null;
         public static GameObject ButtonGrpText = null;
+        public static Transform Slider;
         public static GameObject QuickMenu;
         public static Transform LastButtonParent;
         private static bool HasChecked;
@@ -92,6 +93,10 @@ namespace WorldAPI
             }
             if ((Toggle = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_Settings/Panel_QM_ScrollRect/Viewport/VerticalLayoutGroup/Buttons_Debug_Row_1/Button_PinFPSAndPing")) == null) {
                 Logs.Error("Toggle Is Null!");
+                return false;
+            }
+            if ((Slider = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_AudioSettings/Panel_QM_ScrollRect/Viewport/VerticalLayoutGroup/Audio/VolumeSlider_World")) == null) {
+                Logs.Error("Slider Is Null!");
                 return false;
             }
             if ((MenuTab = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_Dashboard")) == null) {

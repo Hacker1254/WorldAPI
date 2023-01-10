@@ -71,8 +71,11 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\WorldLoader\UnhollowedAsm\Assembly-CSharp.dll</HintPath>
     </Reference>
-    <Reference Include="Il2CppGen.Runtime">
-      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\Il2CppGen.Runtime.dll</HintPath>
+    <Reference Include="IL2CppGen">
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\IL2CppGen.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\Il2CppInterop.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Il2Cppmscorlib">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\WorldLoader\UnhollowedAsm\Il2Cppmscorlib.dll</HintPath>
