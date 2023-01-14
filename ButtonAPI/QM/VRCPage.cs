@@ -7,8 +7,6 @@ using VRC.UI.Core.Styles;
 using VRC.UI.Elements;
 using VRC.UI.Elements.Controls;
 using VRC.UI.Elements.Menus;
-using WorldAPI.ButtonAPI.Controls;
-using WorldAPI.ButtonAPI.Extras;
 using WorldAPI.ButtonAPI.Extras;
 using Object = UnityEngine.Object;
 
@@ -33,7 +31,7 @@ namespace WorldAPI.ButtonAPI
             }
 
             var region = 0; // Idea from https://github.com/PlagueVRC/PlagueButtonAPI/blob/new-ui/PlagueButtonAPI/PlagueButtonAPI/Pages/MenuPage.cs
-            menuName = "WorldMenu_" + pageTitle.Random("+");
+            menuName = "WorldMenu_" + pageTitle + Guid.NewGuid();
             try
             {
                 var gameObject = Object.Instantiate(APIBase.MenuTab, APIBase.MenuTab.transform.parent);

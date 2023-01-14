@@ -15,7 +15,7 @@ namespace WorldAPI.ButtonAPI.Buttons.Groups
 
         public GrpToggles(GameObject menu, string text, string Ontooltip, string OffTooltip, Action<bool> BoolStateChange, 
             string text2, string Ontooltip2, string OffTooltip2, Action<bool> BoolStateChange2, 
-            Vector3 TogglePoz, Sprite OnImageSprite = null, Sprite OffImageSprite = null,
+            Sprite OnImageSprite = null, Sprite OffImageSprite = null,
             float FirstFontSize = 24f, float SecondFontSize = 24f, bool FirstState = false, bool SecondState = false)
         {
             GameObject Base = new GameObject();
@@ -23,7 +23,7 @@ namespace WorldAPI.ButtonAPI.Buttons.Groups
             Base.transform.parent = menu.transform;
             Base.transform.localRotation = Quaternion.Euler(0, 0, 0);
             Base.transform.localScale = new Vector3(1f, 1f, 1f);
-            Base.transform.localPosition = TogglePoz;
+            Base.transform.localPosition = Vector3.zero;
             Base.AddComponent<LayoutElement>();
             GameObject Sub = new GameObject(); // this has a reason! ;3
             Sub.name = $"Toggles_[WorldClient]";
@@ -41,20 +41,20 @@ namespace WorldAPI.ButtonAPI.Buttons.Groups
 
         public GrpToggles(ButtonGroup btnGrp, string text, string Ontooltip, string OffTooltip, Action<bool> BoolStateChange,
             string text2, string Ontooltip2, string OffTooltip2, Action<bool> BoolStateChange2,
-            Vector3 TogglePoz, Sprite OnImageSprite = null, Sprite OffImageSprite = null,
+            Sprite OnImageSprite = null, Sprite OffImageSprite = null,
             float FirstFontSize = 24f, float SecondFontSize = 24f, bool FirstState = false, bool SecondState = false) :
             this(btnGrp.gameObject, text, Ontooltip, OffTooltip, BoolStateChange, 
                 text2, Ontooltip2, OffTooltip2, BoolStateChange2,
-                TogglePoz, OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState)
+                OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState)
         { }
 
         public GrpToggles(CollapsibleButtonGroup btnGrp, string text, string Ontooltip, string OffTooltip, Action<bool> BoolStateChange,
             string text2, string Ontooltip2, string OffTooltip2, Action<bool> BoolStateChange2,
-            Vector3 TogglePoz, Sprite OnImageSprite = null, Sprite OffImageSprite = null,
+            Sprite OnImageSprite = null, Sprite OffImageSprite = null,
             float FirstFontSize = 24f, float SecondFontSize = 24f, bool FirstState = false, bool SecondState = false) :
             this(btnGrp.gameObject, text, Ontooltip, OffTooltip, BoolStateChange,
                 text2, Ontooltip2, OffTooltip2, BoolStateChange2,
-                TogglePoz, OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState)
+                OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState)
         { }
     }
 }

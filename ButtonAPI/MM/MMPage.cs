@@ -20,7 +20,7 @@ public class MMPage
 
     public string MenuName { get; internal set; }
 
-    public MMPage(string menuName) {
+    public MMPage(string menuName, bool root = false) {
         if (!APIBase.IsReady()) throw new Exception();
         if (APIBase.MMMpageTemplate == null) {
             Logs.Error("Fatal Error: MMMpageTemplate Is Null!");
@@ -36,11 +36,12 @@ public class MMPage
             MenuName = menuName;
             gameObject.transform.Find("Header_MM_UserName/LeftItemContainer/Text_Title").GetComponent<TextMeshProUGUIEx>().text = MenuName;
             page = gameObject.GetComponent<UIPage>();
-            page.field_Public_String_0 = menuName;
+            var GuidName = menuName + Guid.NewGuid();
+            page.field_Public_String_0 = GuidName;
             page.field_Private_List_1_UIPage_0 = new Il2CppSystem.Collections.Generic.List<UIPage>();
             page.field_Private_List_1_UIPage_0.Add(page);
             region++;
-            QMUtils.GetMainMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(menuName, page);
+            QMUtils.GetMainMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(GuidName, page);
             region++;
 
             var list = QMUtils.GetMainMenuStateControllerInstance.field_Public_Il2CppReferenceArray_1_UIPage_0.ToList();
@@ -48,6 +49,10 @@ public class MMPage
             QMUtils.GetMainMenuStateControllerInstance.field_Public_Il2CppReferenceArray_1_UIPage_0 = list.ToArray();
             Pageint = QMUtils.GetMainMenuStateControllerInstance.field_Public_Il2CppReferenceArray_1_UIPage_0.Count;
 
+            if (!root) {
+                transform.Find("Header_MM_UserName/LeftItemContainer/Button_Back").gameObject.active = true;
+            }
+            
             page.GetComponent<UnityEngine.Canvas>().enabled = true;
             page.GetComponent<CanvasGroup>().enabled = true;
             page.GetComponent<UIPage>().enabled = true;

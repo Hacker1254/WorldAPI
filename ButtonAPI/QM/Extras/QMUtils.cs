@@ -80,7 +80,7 @@ namespace WorldAPI.ButtonAPI.Extras
         {
             for (var childcount = transform.childCount - 1; childcount >= 0; childcount--)
                 if (exclude == null || exclude(transform.GetChild(childcount)))
-                    UnityEngine.Object.DestroyImmediate(transform.GetChild(childcount).gameObject);
+                    Object.DestroyImmediate(transform.GetChild(childcount).gameObject);
         }
 
         public static void DestroyChildren(this Transform transform) =>
@@ -120,20 +120,6 @@ namespace WorldAPI.ButtonAPI.Extras
                 list.Add(gameObject);
             }
             return list;
-        }
-
-        private static string lastsrt;
-
-        public static string Random(this string s, string spliter = " ", int length = 9, bool numbersOnly = false) {
-            System.Random randomString = new System.Random();
-            string element = numbersOnly ? "0123456789" : "AaBbCcDdEeFfGgHhIiJjKkLlMmNnOoPpQqRrSsTtUuVvWwXxYyZz0123456789";
-            var randomstr = new string((from temp in Enumerable.Repeat<string>(element, length)
-                                        select temp[randomString.Next(temp.Length)]).ToArray<char>());
-            if (randomstr == lastsrt)
-                randomstr = new string((from temp in Enumerable.Repeat<string>(element, length)
-                                        select temp[randomString.Next(temp.Length * 2)]).ToArray<char>());
-            lastsrt = randomstr;
-            return s + spliter + randomstr;
         }
 
         internal static bool IsObfuscated(this string str)

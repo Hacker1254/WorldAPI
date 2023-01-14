@@ -68,11 +68,11 @@ namespace WorldAPI.ButtonAPI.Controls
 
         public GrpToggles AddGrpToggles(string text, string Ontooltip, string OffTooltip, Action<bool> BoolStateChange,
             string text2, string Ontooltip2, string OffTooltip2, Action<bool> BoolStateChange2,
-            Vector3 TogglePoz, Sprite OnImageSprite = null, Sprite OffImageSprite = null,
+            Sprite OnImageSprite = null, Sprite OffImageSprite = null,
             float FirstFontSize = 24f, float SecondFontSize = 24f, bool FirstState = false, bool SecondState = false) =>
             new GrpToggles(gameObject, text, Ontooltip, OffTooltip, BoolStateChange,
                 text2, Ontooltip2, OffTooltip2, BoolStateChange2,
-                TogglePoz, OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState);
+                OnImageSprite, OffImageSprite, FirstFontSize, SecondFontSize, FirstState, SecondState);
 
         public DuoButtons AddDuoButtons(string buttonOne, string buttonOneTooltip, Action btnAction, string buttonTwo, string buttonTwoTooltip, Action buttonTwoAction) =>
             new DuoButtons(gameObject, buttonOne, buttonOneTooltip, btnAction,
