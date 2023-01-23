@@ -114,7 +114,7 @@ namespace WorldAPI.ButtonAPI
                         else Object.Destroy(child); // Kitten is Gae
 
                 gameObject.transform.Find("ScrollRect/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
-                gameObject.transform.Find("ScrollRect").GetComponent<ScrollRectEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
+                gameObject.transform.Find("ScrollRect").GetComponent<VRC.UI.Elements.Controls.ScrollRectEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
 
                 page.GetComponent<Canvas>().enabled = true; // Fix for Late Menu Creation
                 page.GetComponent<CanvasGroup>().enabled = true; // Fix for Late Menu Creation
