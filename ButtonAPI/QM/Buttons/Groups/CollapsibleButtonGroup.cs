@@ -20,7 +20,7 @@ public class CollapsibleButtonGroup : Root
     public ButtonGroup buttonGroup;
     public static Action ActionButto { get; internal set; }
 
-    public CollapsibleButtonGroup(Transform parent, string text, bool openByDefault = false,
+    public CollapsibleButtonGroup(Transform parent, string text, bool openByDefault = true,
         bool MoreActionButton = false, string ActionButtontext = null, Action MoreActionButtonAction = null)
     {
         if (!APIBase.IsReady()) throw new Exception();
@@ -45,6 +45,8 @@ public class CollapsibleButtonGroup : Root
             buttonGroup.gameObject.SetActive(val);
             IsOpen = val;
         });
+        foldout.Method_Private_Void_Boolean_0(openByDefault);
+
     }
 
     public void MoreActionsButton(bool enabled, string text, Action action) {
@@ -52,6 +54,7 @@ public class CollapsibleButtonGroup : Root
         ActionButto = action;
         InfoButton.gameObject.active = enabled;
         InfoButton.Find("Text_MM_H3").GetComponent<TMPro.TextMeshProUGUI>().text = text;
+        Object.Destroy(InfoButton.GetComponent<VRC.UI.Elements.Controls.PushPageButton>());
         InfoButton.GetComponentInChildren<Button>().onClick = new();
         InfoButton.GetComponentInChildren<Button>().onClick.AddListener(action);
     }

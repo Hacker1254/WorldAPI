@@ -143,7 +143,6 @@ namespace WorldAPI.ButtonAPI.Extras
                     callBackOnDestroy?.Invoke(name);
                 }
             }
-
         }
     }
 }

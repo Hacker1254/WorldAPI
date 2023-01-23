@@ -15,9 +15,9 @@ namespace WorldAPI.ButtonAPI.QM.Extras;
 public class VRCSlider : Root
 {
     public Transform transform;
-    private TextMeshProUGUI PercentComp;
+    public VRC.UI.Elements.Utilities.SnapSlider snapSlider;
 
-    public VRCSlider(Transform menu, string text, string tooltip, Action<float> listener, float defaultValue = 0f) {
+    public VRCSlider(Transform menu, string text, string tooltip, Action<float> listener, float defaultValue = 0f, float minValue = 0f, float maxValue = 1f, string percentEnding = "%") {
 
         if (!APIBase.IsReady()) { Logs.Error("Error, Something Was Missing!"); return; }
 
@@ -33,7 +33,6 @@ public class VRCSlider : Root
         transform.localPosition = Vector3.zeroVector;
 
         transform.gameObject.SetActive(true);
-        PercentComp = transform.Find("Text_CurrentValue").GetComponent<TextMeshProUGUIEx>();
         QMUtils.RemoveUnknownComps(transform.Find("Text_CurrentValue").gameObject);
         TMProCompnt = transform.Find("Text_Name").GetComponent<TextMeshProUGUIEx>();
         TMProCompnt.text = text;
@@ -43,6 +42,18 @@ public class VRCSlider : Root
         tip.field_Public_String_1 = tooltip;
         var layOut = gameObject.GetComponent<UnityEngine.UI.LayoutElement>();
         layOut.preferredHeight = 111;
+
+        snapSlider = gameObject.GetComponentInChildren<VRC.UI.Elements.Utilities.SnapSlider>();
+        snapSlider.onValueChanged = new();
+        snapSlider.value = defaultValue;
+        snapSlider.minValue = minValue;
+        snapSlider.maxValue = maxValue;
+        snapSlider.onValueChanged.AddListener((Action<float>)delegate (float val) {
+            TMProCompnt.transform.localPosition = new Vector3(-386.4344f, 24.1347f, 0);//This is bad ik ik shut up faggots 
+            listener?.Invoke(val);
+        });
+        Object.Destroy(transform.Find("Text_CurrentValue"));
+        Object.Destroy(transform.Find("Button_MM_Mute"));
 
     }
 }
