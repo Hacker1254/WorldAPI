@@ -52,6 +52,11 @@
     <Compile Include="ButtonAPI\QM\Controls\ExtentedControl.cs" />
     <Compile Include="ButtonAPI\QM\Tab.cs" />
     <Compile Include="ButtonAPI\QM\VRCPage.cs" />
+    <Compile Include="ButtonAPI\Wing\Buttons\WButton.cs" />
+    <Compile Include="ButtonAPI\Wing\Buttons\WToggle.cs" />
+    <Compile Include="ButtonAPI\Wing\Controls\WingBtnControls.cs" />
+    <Compile Include="ButtonAPI\Wing\Controls\WingTglControls.cs" />
+    <Compile Include="ButtonAPI\Wing\WPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SafeUtils.cs" />
   </ItemGroup>
