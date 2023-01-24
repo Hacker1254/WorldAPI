@@ -17,6 +17,8 @@ namespace WorldAPI.ButtonAPI.Wing.Buttons;
 public class WButton : WingBtnControls
 {
     public WButton(WPage menu, string buttonName, Action listener, string toolTip, Sprite Icon = null, bool SubMenu = false, string Header = "") {
+        if (!APIBase.IsReady()) throw new Exception();
+
         gameObject = Object.Instantiate(APIBase.WBtnPgTemplate, menu.menuContents);
         transform = gameObject.transform;
 
@@ -51,6 +53,8 @@ public class WButton : WingBtnControls
     }
 
     public WButton(WingSide WingSide, string buttonName, Action listener, string toolTip, Sprite Icon = null, bool Separator = false) {
+        if (!APIBase.IsReady()) throw new Exception();
+
         if (WingSide == WingSide.Left)
             gameObject = Object.Instantiate(APIBase.WBtnTemplate, APIBase.WLDefMenu.transform);
         else gameObject = Object.Instantiate(APIBase.WBtnTemplate, APIBase.WRDefMenu.transform);

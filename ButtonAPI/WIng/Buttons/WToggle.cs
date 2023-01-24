@@ -43,6 +43,7 @@ public class WToggle : WingTglControls
     private void Consrt(WButton transform, bool DefaultState = false,
             string OffTooltip = null, string OnToolTip = null,
             Sprite onimage = null, Sprite offimage = null) {
+
         TMProCompnt = transform.TMProCompnt;
         gameObject = transform.gameObject;
         transform.gameObject.SetActive(true);
