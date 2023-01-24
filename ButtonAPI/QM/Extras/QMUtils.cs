@@ -18,29 +18,10 @@ namespace WorldAPI.ButtonAPI.Extras
         internal static MenuStateController WLcontroller;
         internal static MenuStateController WRcontroller;
 
-        public static VRC.UI.Elements.QuickMenu GetQuickMenuInstance
-        {
-            get =>
-                Resources.FindObjectsOfTypeAll<VRC.UI.Elements.QuickMenu>().FirstOrDefault();
-        }
-
-        public static MenuStateController GetMenuStateControllerInstance
-        {
-            get =>
-                GetQuickMenuInstance.GetComponent<MenuStateController>();
-        }
-
-        public static VRC.UI.Elements.MainMenu GetMainMenuInstance
-        {
-            get =>
-                Resources.FindObjectsOfTypeAll<VRC.UI.Elements.MainMenu>().FirstOrDefault(x => x.name == "Canvas_MainMenu(Clone)");
-        }
-
-        public static MenuStateController GetMainMenuStateControllerInstance
-        {
-            get =>
-                GetMainMenuInstance.GetComponent<MenuStateController>();
-        }
+        public static VRC.UI.Elements.QuickMenu GetQuickMenuInstance => Resources.FindObjectsOfTypeAll<VRC.UI.Elements.QuickMenu>().FirstOrDefault();
+        public static MenuStateController GetMenuStateControllerInstance => GetQuickMenuInstance.GetComponent<MenuStateController>();
+        public static MainMenu GetMainMenuInstance => Resources.FindObjectsOfTypeAll<MainMenu>().FirstOrDefault(x => x.name == "Canvas_MainMenu(Clone)");
+        public static MenuStateController GetMainMenuStateControllerInstance => GetMainMenuInstance.GetComponent<MenuStateController>();
 
         public static MenuStateController GetWngLMenuStateControllerInstance
         {

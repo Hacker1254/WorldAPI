@@ -25,6 +25,8 @@ public class WPage
     public Transform menuContents;
 
     public WPage(string pageName, WingSide WingSide) {
+        if (!APIBase.IsReady()) throw new Exception();
+
         wingSide = WingSide;
 
         gameObject = Object.Instantiate(APIBase.WPageTemplate, APIBase.WPageTemplate.transform.parent);

@@ -17,7 +17,6 @@ namespace WorldAPI.ButtonAPI
         public readonly GameObject badgeGameObject;
         public readonly TextMeshProUGUI badgeText;
         public readonly VRCPage Menu;
-        private bool test = false;
 
         public Action OnClick { get; set; }
 
