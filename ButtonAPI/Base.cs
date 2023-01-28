@@ -1,16 +1,7 @@
-﻿using HarmonyLib;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using TMPro;
+﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
-using WorldAPI.Buttons;
 using WorldLoader.Mods;
-using Object = UnityEngine.Object;
 
 namespace WorldAPI
 {
@@ -49,33 +40,21 @@ namespace WorldAPI
         public static Action<Exception, string> ErrorCallBack { get; set; } = new Action<Exception, string>((er, str) => {
             Logs.Error($"The ButtonAPI had an Error At {str}", er);
         });
-
         public static string autoColorHex { get; set; } = null;
-
-        public static Sprite DefaultButtonSprite; // Override these if u want custom ones
-        public static Sprite OffSprite, OnSprite; // Override these if u want custom ones
-        public static Transform Button = null;
-        public static Transform Toggle = null;
-        public static Transform Tab = null;
-        public static Transform MenuTab = null;
-        public static GameObject ColpButtonGrp = null;
-        public static GameObject ButtonGrp = null;
-        public static GameObject ButtonGrpText = null;
-        public static Transform Slider;
-        public static GameObject QuickMenu;
         public static Transform LastButtonParent;
         private static bool HasChecked;
 
-        public static GameObject MMM;
-        public static GameObject MMMpageTemplate;
-        public static GameObject MMMTabTemplate;
+        public static Sprite DefaultButtonSprite; // Override these if u want custom ones
+        public static Sprite OffSprite, OnSprite; // Override these if u want custom ones
+        public static GameObject QuickMenu, ColpButtonGrp, ButtonGrp, ButtonGrpText;
+        public static Transform Button, Toggle, Tab, MenuTab, Slider;
 
-        public static GameObject WPageTemplate;
-        public static GameObject WBtnTemplate;
-        public static GameObject WBtnPgTemplate;
-        public static GameObject WLDefMenu;
-        public static GameObject WRDefMenu;
 
+        public static GameObject MMM, MMMpageTemplate, MMMCarouselPageTemplate, MMMCarouselButtonTemplate, MMMTabTemplate;
+        public static GameObject MMCTgl, MMBtnGRP, MMSlider;
+
+        public static GameObject WPageTemplate, WBtnTemplate, WBtnPgTemplate, WLDefMenu, WRDefMenu;
+   
         public static bool IsReady()
         {
             if (HasChecked) return true;
@@ -151,6 +130,26 @@ namespace WorldAPI
             }
             if ((MMMpageTemplate = MMM.transform.Find("Container/MMParent/Menu_MM_Profile").gameObject) == null) {
                 Logs.Error("Main Menu Template Is Null!");
+                return false;
+            }
+            if ((MMMCarouselPageTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings").gameObject) == null) {
+                Logs.Error("Menu_Settings Is Null!");
+                return false;
+            }
+            if ((MMMCarouselButtonTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/Viewport/VerticalLayoutGroup/Cell_MM_Audio & Voice").gameObject) == null) {
+                Logs.Error("MMMCarouselButtonTemplate Is Null!");
+                return false;
+            }
+            if ((MMCTgl = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Comfort/Settings_Panel_1/VerticalLayoutGroup/AFKDetection").gameObject) == null) {
+                Logs.Error("MMCTgl Is Null!");
+                return false;
+            }
+            if ((MMBtnGRP = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Safety").gameObject) == null) {
+                Logs.Error("MMBtnGRP Is Null!");
+                return false;
+            }
+            if ((MMSlider = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Audio&Voice/Microphone/Settings_Panel_1/VerticalLayoutGroup/MicOutputVolume").gameObject) == null) {
+                Logs.Error("MMSlider Is Null!");
                 return false;
             }
             if ((MMMTabTemplate = MMM.transform.Find("Container/PageButtons/HorizontalLayoutGroup/Page_Profile").gameObject) == null) {

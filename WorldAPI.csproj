@@ -33,6 +33,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Base64.cs" />
+    <Compile Include="ButtonAPI\MM\Carousel\CMenu.cs" />
+    <Compile Include="ButtonAPI\MM\Carousel\Items\CGrp.cs" />
+    <Compile Include="ButtonAPI\MM\Carousel\Items\CSlider.cs" />
+    <Compile Include="ButtonAPI\MM\Carousel\Items\CToggle.cs" />
+    <Compile Include="ButtonAPI\MM\MMCarousel.cs" />
     <Compile Include="ButtonAPI\MM\MMPage.cs" />
     <Compile Include="ButtonAPI\MM\MMTab.cs" />
     <Compile Include="ButtonAPI\QM\Buttons\Groups\DuoButtons.cs" />
@@ -50,6 +55,7 @@
     <Compile Include="ButtonAPI\QM\Extras\QMUtils.cs" />
     <Compile Include="ButtonAPI\Base.cs" />
     <Compile Include="ButtonAPI\QM\Controls\ExtentedControl.cs" />
+    <Compile Include="ButtonAPI\QM\Extras\VRCSlider.cs" />
     <Compile Include="ButtonAPI\QM\Tab.cs" />
     <Compile Include="ButtonAPI\QM\VRCPage.cs" />
     <Compile Include="ButtonAPI\Wing\Buttons\WButton.cs" />

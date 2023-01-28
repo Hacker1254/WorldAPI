@@ -57,18 +57,15 @@ namespace WorldAPI.ButtonAPI.Extras
             return component;
         }
 
-        public static void DestroyChildren(this Transform transform, Func<Transform, bool> exclude)
+        public static void DestroyChildren(this Transform transform, Func<Transform, bool> exclude = null)
         {
             for (var childcount = transform.childCount - 1; childcount >= 0; childcount--)
                 if (exclude == null || exclude(transform.GetChild(childcount)))
                     Object.DestroyImmediate(transform.GetChild(childcount).gameObject);
         }
 
-        public static void DestroyChildren(this Transform transform) =>
-            transform.DestroyChildren(null);
-
-        public static void DestroyChildren(this GameObject gameObj) =>
-            gameObj.transform.DestroyChildren(null);
+        public static void DestroyChildren(this GameObject gameObj, Func<Transform, bool> exclude = null) =>
+            gameObj.transform.DestroyChildren(exclude);
 
         public static Color HexToColor(string hexColor)
         {

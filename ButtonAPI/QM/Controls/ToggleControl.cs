@@ -23,6 +23,12 @@ namespace WorldAPI.ButtonAPI.Controls
             ToggleCompnt.onValueChanged.AddListener(newAction);
         }
 
+        public void SoftSetState(bool value) {
+            ToggleCompnt.onValueChanged = new();
+            ToggleCompnt.isOn = value;
+            ToggleCompnt.onValueChanged.AddListener(new Action<bool>((val) => APIBase.SafelyInvolk(val, Listener, Text)));
+        }
+
         public (Sprite, Sprite) SetImages(Sprite onSprite = null, Sprite offSprite = null) {
             OffImage.sprite = offSprite;
             OnImage.sprite = onSprite;
