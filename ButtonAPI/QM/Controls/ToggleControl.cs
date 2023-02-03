@@ -2,6 +2,8 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using WorldAPI.ButtonAPI.Buttons;
+using static WorldAPI.APIBase;
 
 namespace WorldAPI.ButtonAPI.Controls
 {
@@ -11,8 +13,9 @@ namespace WorldAPI.ButtonAPI.Controls
         internal Action<bool> Listener { get; set; }
         public Image OnImage { get; internal set; }
         public Image OffImage { get; internal set; }
+        internal static VRCToggle inst { get; set; }
 
-        public bool State
+    public bool State
         {
             get => ToggleCompnt.isOn;
             set => ToggleCompnt.isOn = value;
@@ -26,7 +29,10 @@ namespace WorldAPI.ButtonAPI.Controls
         public void SoftSetState(bool value) {
             ToggleCompnt.onValueChanged = new();
             ToggleCompnt.isOn = value;
-            ToggleCompnt.onValueChanged.AddListener(new Action<bool>((val) => APIBase.SafelyInvolk(val, Listener, Text)));
+            ToggleCompnt.onValueChanged.AddListener(new Action<bool>((val) => {
+                APIBase.SafelyInvolk(val, Listener, Text);
+                Events.onVRCToggleValChange?.Invoke(inst, val);
+            }));
         }
 
         public (Sprite, Sprite) SetImages(Sprite onSprite = null, Sprite offSprite = null) {

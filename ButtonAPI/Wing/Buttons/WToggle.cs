@@ -36,6 +36,7 @@ public class WToggle : WingTglControls
             OffImage.gameObject.active = !State;
             OnImage.gameObject.active = State;
             SetToolTip(DefaultState ? onTip : offTip);
+            APIBase.Events.onWToggleValChange?.Invoke(this, State);
         }, DefaultState ? OnToolTip : OffTooltip, DefaultState ? onimage : offimage);
         Consrt(transform, DefaultState, OffTooltip, OnToolTip, onimage, offimage);
     }

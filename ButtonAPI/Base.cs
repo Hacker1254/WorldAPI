@@ -1,6 +1,9 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.UI;
+using WorldAPI.ButtonAPI.Buttons;
+using WorldAPI.ButtonAPI.MM.Carousel.Items;
+using WorldAPI.ButtonAPI.WIng.Buttons;
 using WorldLoader.Mods;
 
 namespace WorldAPI
@@ -34,6 +37,11 @@ namespace WorldAPI
 
     public class APIBase
     {
+        public class Events {
+            public static Action<VRCToggle, bool> onVRCToggleValChange = new Action<VRCToggle, bool>((er, str) => { });
+            public static Action<CToggle, bool> onCToggleValChange = new Action<CToggle, bool>((er, str) => { });
+            public static Action<WToggle, bool> onWToggleValChange = new Action<WToggle, bool>((er, str) => { });
+        }
         /// <summary>
         ///  Set this if u want to override what happens when a button/ tgl throws an error
         /// </summary>

@@ -38,14 +38,14 @@ public class CollapsibleButtonGroup : Root
         InfoButton = headerObj.transform.Find("InfoButton");
         ActionButto = MoreActionButtonAction;
         MoreActionsButton(MoreActionButton, ActionButtontext, MoreActionButtonAction);
-        foldout.field_Private_String_0 = "ButtonGroup";
+        //foldout.field_Private_String_0 = "ButtonGroup";
 
-        foldout.field_Private_Action_1_Boolean_0 = new Action<bool>(val =>
-        {
-            buttonGroup.gameObject.SetActive(val);
-            IsOpen = val;
-        });
-        foldout.Method_Private_Void_Boolean_0(openByDefault);
+        //foldout.field_Private_Action_1_Boolean_0 = new Action<bool>(val =>
+        //{
+        //    buttonGroup.gameObject.SetActive(val);
+        //    IsOpen = val;
+        //});
+        //foldout.Method_Private_Void_Boolean_0(openByDefault);
 
     }
 

@@ -70,7 +70,7 @@ public class MMPage
     public void OpenMenu()
     {
         gameObject.SetActive(true);
-        QMUtils.GetMainMenuStateControllerInstance.Method_Public_Void_String_ObjectPublicStBoAc1ObObUnique_Boolean_EnumNPublicSealedvaNoLeRiBoIn6vUnique_1(page.field_Public_String_0, null, true, UIPage.EnumNPublicSealedvaNoLeRiBoIn6vUnique.Right);
+        QMUtils.GetMainMenuStateControllerInstance.Method_Public_Void_String_ObjectPublicStBoAc1ObObUnique_Boolean_EnumNPublicSealedvaNoLeRiBoIn6vUnique_0(page.field_Public_String_0, null, true, UIPage.EnumNPublicSealedvaNoLeRiBoIn6vUnique.Right);
     }
 
 }

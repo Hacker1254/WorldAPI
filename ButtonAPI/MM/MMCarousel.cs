@@ -108,8 +108,8 @@ public class MMCarousel
         var logOutBRN = LogOutBtn.GetComponent<Button>();
         logOutBRN.onClick = new();
         logOutBRN.onClick.AddListener(listener1);
-        LogOutBtn.transform.Find("Background_Field/Text_FieldContent").GetComponent<TextMeshProUGUI>().text = text1;
-        LogOutBtn.transform.Find("Background_Field/Icon").GetComponent<Image>().sprite = sprite1;
+        foreach (var obj in LogOutBtn.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text1;
+        foreach (var obj in LogOutBtn.GetComponentsInChildren<Image>()) obj.sprite = sprite1;
         var Logouttooltip = LogOutBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
         Logouttooltip.field_Public_String_0 = toolTip1;
         Logouttooltip.field_Public_String_1 = toolTip1;
@@ -117,8 +117,8 @@ public class MMCarousel
         var ExitBRN = ExitBtn.GetComponent<Button>();
         ExitBRN.onClick = new();
         ExitBRN.onClick.AddListener(listener1);
-        ExitBtn.transform.Find("Background_Field/Text_FieldContent").GetComponent<TextMeshProUGUI>().text = text2;
-        ExitBtn.transform.Find("Background_Field/Icon").GetComponent<Image>().sprite = sprite2;
+        foreach (var obj in ExitBRN.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text2;
+        foreach (var obj in ExitBRN.GetComponentsInChildren<Image>()) obj.sprite = sprite2;
         var exittooltip = ExitBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
         exittooltip.field_Public_String_0 = toolTip2;
         exittooltip.field_Public_String_1 = toolTip2;
@@ -133,6 +133,6 @@ public class MMCarousel
     public void OpenMenu()
     {
         gameObject.SetActive(true);
-        QMUtils.GetMainMenuStateControllerInstance.Method_Public_Void_String_ObjectPublicStBoAc1ObObUnique_Boolean_EnumNPublicSealedvaNoLeRiBoIn6vUnique_1(page.field_Public_String_0, null, true, UIPage.EnumNPublicSealedvaNoLeRiBoIn6vUnique.Right);
+        QMUtils.GetMainMenuStateControllerInstance.Method_Public_Void_String_ObjectPublicStBoAc1ObObUnique_Boolean_EnumNPublicSealedvaNoLeRiBoIn6vUnique_0(page.field_Public_String_0, null, true, UIPage.EnumNPublicSealedvaNoLeRiBoIn6vUnique.Right);
     }
 }
