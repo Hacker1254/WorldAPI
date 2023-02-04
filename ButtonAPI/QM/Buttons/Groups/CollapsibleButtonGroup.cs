@@ -18,10 +18,8 @@ public class CollapsibleButtonGroup : Root
     public GameObject headerObj;
     public Transform InfoButton;
     public ButtonGroup buttonGroup;
-    public static Action ActionButto { get; internal set; }
 
-    public CollapsibleButtonGroup(Transform parent, string text, bool openByDefault = true,
-        bool MoreActionButton = false, string ActionButtontext = null, Action MoreActionButtonAction = null)
+    public CollapsibleButtonGroup(Transform parent, string text, bool openByDefault = true)
     {
         if (!APIBase.IsReady()) throw new Exception();
 
@@ -33,30 +31,15 @@ public class CollapsibleButtonGroup : Root
 
         buttonGroup = new(parent, string.Empty, true);
         gameObject = buttonGroup.gameObject;
-        var foldout = headerObj.GetComponent<FoldoutToggle>();
 
         InfoButton = headerObj.transform.Find("InfoButton");
-        ActionButto = MoreActionButtonAction;
-        MoreActionsButton(MoreActionButton, ActionButtontext, MoreActionButtonAction);
-        //foldout.field_Private_String_0 = "ButtonGroup";
-
-        //foldout.field_Private_Action_1_Boolean_0 = new Action<bool>(val =>
-        //{
-        //    buttonGroup.gameObject.SetActive(val);
-        //    IsOpen = val;
-        //});
-        //foldout.Method_Private_Void_Boolean_0(openByDefault);
-
-    }
-
-    public void MoreActionsButton(bool enabled, string text, Action action) {
-        if (ActionButto != null && action == null) action = ActionButto;
-        ActionButto = action;
-        InfoButton.gameObject.active = enabled;
-        InfoButton.Find("Text_MM_H3").GetComponent<TMPro.TextMeshProUGUI>().text = text;
-        Object.Destroy(InfoButton.GetComponent<VRC.UI.Elements.Controls.PushPageButton>());
-        InfoButton.GetComponentInChildren<Button>().onClick = new();
-        InfoButton.GetComponentInChildren<Button>().onClick.AddListener(action);
+        var foldout = headerObj.transform.Find("Background_Button").GetComponent<Toggle>();
+        foldout.onValueChanged = new();
+        foldout.isOn = openByDefault;
+        foldout.onValueChanged.AddListener(new Action<bool>(val =>{
+            buttonGroup.gameObject.SetActive(val);
+            IsOpen = val;
+        }));
     }
 
 

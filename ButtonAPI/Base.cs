@@ -82,7 +82,7 @@ namespace WorldAPI
                 Logs.Error("Toggle Is Null!");
                 return false;
             }
-            if ((Slider = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_AudioSettings/Panel_QM_ScrollRect/Viewport/VerticalLayoutGroup/Audio/VolumeSlider_World")) == null) {
+            if ((Slider = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_AudioSettings/Panel_QM_ScrollRect/Viewport/VerticalLayoutGroup/Audio/Audio/VolumeSlider_World")) == null) {
                 Logs.Error("Slider Is Null!");
                 return false;
             }

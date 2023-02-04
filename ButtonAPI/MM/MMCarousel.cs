@@ -109,7 +109,10 @@ public class MMCarousel
         logOutBRN.onClick = new();
         logOutBRN.onClick.AddListener(listener1);
         foreach (var obj in LogOutBtn.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text1;
-        foreach (var obj in LogOutBtn.GetComponentsInChildren<Image>()) obj.sprite = sprite1;
+        foreach (var obj in LogOutBtn.GetComponentsInChildren<Image>()) {
+            if (obj.name != "Icon") continue;
+            obj.sprite = sprite1; 
+        }
         var Logouttooltip = LogOutBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
         Logouttooltip.field_Public_String_0 = toolTip1;
         Logouttooltip.field_Public_String_1 = toolTip1;
@@ -118,7 +121,10 @@ public class MMCarousel
         ExitBRN.onClick = new();
         ExitBRN.onClick.AddListener(listener1);
         foreach (var obj in ExitBRN.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text2;
-        foreach (var obj in ExitBRN.GetComponentsInChildren<Image>()) obj.sprite = sprite2;
+        foreach (var obj in ExitBRN.GetComponentsInChildren<Image>()) {
+            if (obj.name != "Icon") continue;
+            obj.sprite = sprite2;
+        }
         var exittooltip = ExitBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
         exittooltip.field_Public_String_0 = toolTip2;
         exittooltip.field_Public_String_1 = toolTip2;
