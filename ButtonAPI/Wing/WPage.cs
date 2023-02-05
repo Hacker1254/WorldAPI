@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using VRC.UI.Elements;
 using WorldAPI.ButtonAPI.Extras;
 using UnityEngine;
 using Object = UnityEngine.Object;
 using static WorldAPI.APIBase;
-using WorldLoader.HookUtils;
 using UnityEngine.UI;
 using WorldAPI.ButtonAPI.Wing.Buttons;
 using VRC.UI.Elements.Controls;
@@ -31,19 +26,19 @@ public class WPage
 
         gameObject = Object.Instantiate(APIBase.WPageTemplate, APIBase.WPageTemplate.transform.parent);
         transform = gameObject.transform;
-        gameObject.name = pageName;
+        gameObject.name = pageName + Guid.NewGuid();
         page = gameObject.GetComponent<UIPage>();
-        page.field_Public_String_0 = pageName;
+        page.field_Public_String_0 = pageName + Guid.NewGuid();
         page.field_Private_List_1_UIPage_0 = new Il2CppSystem.Collections.Generic.List<UIPage>();
         page.field_Private_List_1_UIPage_0.Add(page);
         menuContents = gameObject.transform.Find("ScrollRect/Viewport/VerticalLayoutGroup");
         menuContents.GetComponent<VerticalLayoutGroup>().childForceExpandWidth = true;
         menuContents.DestroyChildren();
-        gameObject.transform.Find("WngHeader_H1/LeftItemContainer/Text_QM_H2 (1)").GetComponent<TextMeshProUGUIEx>().text = pageName;
+        gameObject.transform.Find("WngHeader_H1/LeftItemContainer/Text_QM_H2 (1)").GetComponent<TextMeshProUGUIEx>().text = pageName + Guid.NewGuid();
         if (wingSide == WingSide.Left) 
-            QMUtils.GetWngLMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName, page);
+            QMUtils.GetWngLMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
         else 
-            QMUtils.GetWngRMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName, page);
+            QMUtils.GetWngRMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
 
         page.transform.Find("ScrollRect").GetComponent<VRC.UI.Elements.Controls.ScrollRectEx>().field_Public_Boolean_0 = true;
         page.GetComponent<Canvas>().enabled = true;

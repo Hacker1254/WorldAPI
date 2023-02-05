@@ -31,9 +31,9 @@ public class CSlider
         snapSlider = gameObject.transform.Find("SliderContainer/Slider").GetComponent<Slider>();
 
         snapSlider.onValueChanged = new();
-        snapSlider.value = defaultValue;
         snapSlider.minValue = MinValue;
         snapSlider.maxValue = MaxValue;
+        snapSlider.value = defaultValue;
         snapSlider.onValueChanged.AddListener((Action<float>)delegate (float val) {
             onValChanged?.Invoke(val);
         });
