@@ -21,6 +21,7 @@ namespace WorldAPI.ButtonAPI
         private GameObject extButtonGameObject;
         public RectMask2D menuMask;
         public string menuName;
+        public Action onMenuOpen;
 
         public VRCPage(string pageTitle, bool root = false, bool backButton = true, bool expandButton = false, Action expandButtonAction = null, string expandButtonTooltip = "", Sprite expandButtonSprite = null, bool preserveColor = false, bool fix = true)
         {
@@ -144,6 +145,7 @@ namespace WorldAPI.ButtonAPI
         {
             page.gameObject.active = true;
             QMUtils.GetMenuStateControllerInstance.Method_Public_Void_String_ObjectPublicStBoAc1ObObUnique_Boolean_EnumNPublicSealedvaNoLeRiBoIn6vUnique_0(page.field_Public_String_0, null, false, UIPage.EnumNPublicSealedvaNoLeRiBoIn6vUnique.Right);
+            onMenuOpen?.Invoke();
         }
 
 
