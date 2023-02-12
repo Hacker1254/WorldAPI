@@ -70,8 +70,7 @@ public class MMCarousel
             if (Icon != null) {
                 ImageComp.sprite = Icon;
                 ImageComp.overrideSprite = Icon;
-            }
-            else ImageComp.gameObject.SetActive(false);
+            } else ImageComp.gameObject.SetActive(false);
 
             var textt = scrolNav.transform.Find("Viewport/VerticalLayoutGroup/DynamicSidePanel_Header/Text_Name").GetComponent<TextMeshProUGUI>();
             textt.text = HeaderText;

@@ -56,13 +56,13 @@ namespace WorldAPI.Buttons
         }
 
 
-        public VRCButton(ButtonGroup buttonGroup, string text, string tooltip, Action click, bool Half = false, bool subMenuIcon = false, Sprite icon = null) 
-            : this(buttonGroup.transform, text, tooltip, click, Half, subMenuIcon, icon)
+        public VRCButton(ButtonGroup buttonGroup, string text, string tooltip, Action click, bool Half = false, bool subMenuIcon = false, Sprite icon = null, HalfType Type = HalfType.Normal, bool IsGroup = false) 
+            : this(buttonGroup.transform, text, tooltip, click, Half, subMenuIcon, icon, Type, IsGroup)
         {
         }
 
-        public VRCButton(CollapsibleButtonGroup buttonGroup, string text, string tooltip, Action click, bool Half = false, bool subMenuIcon = false, Sprite icon = null)
-            : this(buttonGroup.buttonGroup.transform, text, tooltip, click, Half, subMenuIcon, icon)
+        public VRCButton(CollapsibleButtonGroup buttonGroup, string text, string tooltip, Action click, bool Half = false, bool subMenuIcon = false, Sprite icon = null, HalfType Type = HalfType.Normal, bool IsGroup = false)
+            : this(buttonGroup.buttonGroup.transform, text, tooltip, click, Half, subMenuIcon, icon, Type, IsGroup)
         {
         }
     }
