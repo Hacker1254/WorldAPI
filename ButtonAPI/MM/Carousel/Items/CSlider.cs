@@ -24,6 +24,8 @@ public class CSlider
 
         TMProComp = gameObject.transform.Find("LeftItemContainer/Text_MM_H3").GetComponent<TextMeshProUGUI>();
         TMProComp.text = text;
+        TMProComp.richText = true;
+
         if (Icon != null)
             gameObject.transform.Find("LeftItemContainer/StatusIcon").GetComponent<Image>().sprite = Icon;
         gameObject.transform.Find("RightItemContainer/Text_MM_H3").gameObject.SetActive(false);

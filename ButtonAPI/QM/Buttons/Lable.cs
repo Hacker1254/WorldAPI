@@ -28,15 +28,18 @@ namespace WorldAPI.ButtonAPI.Buttons
             SButton = new VRCButton(menu, text, null, onClick);
             SButton.ImgCompnt.gameObject.active = false;
             TMProCompnt = SButton.TMProCompnt;
+            TMProCompnt.richText = true;
+            TMProCompnt.transform.localPosition = new Vector3(0f, 2f, 0f);
+            TMProCompnt.fontSize = 38f;
+            TMProCompnt.enableAutoSizing = true;
+
             SButton.transform.Find("Background").gameObject.active = Bg;
             gameObject = SButton.gameObject;
             //SButton.transform.Find("Background").GetComponent<Image>().color = new Color(0f, 0f, 0f, 0f);
             var Text2 = UnityEngine.Object.Instantiate(SButton.transform.Find("Text_H4").gameObject, new Vector3(0, -54.75f, 0), Quaternion.Euler(0, 0, 0), SButton.transform);
             Text2.GetComponent<TextMeshProUGUI>().text = LowerText;
             LowerTextUgui = Text2.GetComponent<TextMeshProUGUI>();
-            SButton.TMProCompnt.transform.localPosition = new Vector3(0f, 2f, 0f);
-            SButton.TMProCompnt.fontSize = 38f;
-            SButton.TMProCompnt.enableAutoSizing = true;
+ 
             ButtonCompnt = SButton.gameObject.GetOrAddComponent<Button>();
             if (onClick == null)
             {

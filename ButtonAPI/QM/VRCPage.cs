@@ -70,6 +70,7 @@ namespace WorldAPI.ButtonAPI
                 region++;
                 pageTitleText.fontSize = 54.7f;
                 pageTitleText.text = pageTitle;
+                pageTitleText.richText = true;
                 isRoot = root;
                 var backButtonGameObject = gameObject.transform.GetChild(0).Find("LeftItemContainer/Button_Back").gameObject;
                 region++;

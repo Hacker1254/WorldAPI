@@ -34,7 +34,9 @@ public class MMPage
             gameObject.name = menuName;
             gameObject.transform.Find("Loading_Display").gameObject.active = false;
             MenuName = menuName;
-            gameObject.transform.Find("Header_MM_UserName/LeftItemContainer/Text_Title").GetComponent<TextMeshProUGUIEx>().text = MenuName;
+            var ttext = gameObject.transform.Find("Header_MM_UserName/LeftItemContainer/Text_Title").GetComponent<TextMeshProUGUIEx>();
+            ttext.text = MenuName;
+            ttext.richText = true;
             page = gameObject.GetComponent<UIPage>();
             var GuidName = menuName + Guid.NewGuid();
             page.field_Public_String_0 = GuidName;

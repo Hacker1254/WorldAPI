@@ -37,6 +37,7 @@ namespace WorldAPI.ButtonAPI.Buttons
             TMProCompnt = transform.GetComponentInChildren<TextMeshProUGUI>();
             Text = text;
             TMProCompnt.text = text;
+            TMProCompnt.richText = true;
             ToggleCompnt = transform.GetComponent<Toggle>();
             ToggleCompnt.onValueChanged = new Toggle.ToggleEvent();
             State = DefaultState;

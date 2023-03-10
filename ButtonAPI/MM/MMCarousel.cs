@@ -77,6 +77,8 @@ public class MMCarousel
             textt.overflowMode = TextOverflowModes.Overflow;
             textt.autoSizeTextContainer = true;
             textt.enableAutoSizing = true;
+            textt.richText = true;
+
 
             menuContents = scrolNav.transform.Find("ScrollRect_Content/Viewport/VerticalLayoutGroup");
             menuContents.DestroyChildren();
@@ -107,7 +109,10 @@ public class MMCarousel
         var logOutBRN = LogOutBtn.GetComponent<Button>();
         logOutBRN.onClick = new();
         logOutBRN.onClick.AddListener(listener1);
-        foreach (var obj in LogOutBtn.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text1;
+        foreach (var obj in LogOutBtn.GetComponentsInChildren<TextMeshProUGUI>()) {
+            obj.text = text1;
+            obj.richText = true;
+        }
         foreach (var obj in LogOutBtn.GetComponentsInChildren<Image>()) {
             if (obj.name != "Icon") continue;
             obj.sprite = sprite1; 
@@ -119,7 +124,10 @@ public class MMCarousel
         var ExitBRN = ExitBtn.GetComponent<Button>();
         ExitBRN.onClick = new();
         ExitBRN.onClick.AddListener(listener1);
-        foreach (var obj in ExitBRN.GetComponentsInChildren<TextMeshProUGUI>()) obj.text = text2;
+        foreach (var obj in ExitBRN.GetComponentsInChildren<TextMeshProUGUI>()) {
+            obj.text = text2;
+            obj.richText = true;
+        }
         foreach (var obj in ExitBRN.GetComponentsInChildren<Image>()) {
             if (obj.name != "Icon") continue;
             obj.sprite = sprite2;

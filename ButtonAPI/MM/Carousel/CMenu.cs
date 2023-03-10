@@ -29,6 +29,7 @@ public class CMenu
 
         TMProComp = gameObject.transform.Find("Mask/Text_Name").GetComponent<TextMeshProUGUI>();
         TMProComp.text = buttonText;
+        TMProComp.richText = true;
 
         ToolTip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
         ToolTip.field_Public_String_0 = toolTip;

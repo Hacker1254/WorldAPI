@@ -28,6 +28,8 @@ public class CGrp
 
         TMProComp = transform.Find("MM_Foldout/Label").GetComponent<TextMeshProUGUI>();
         TMProComp.text = text;
+        TMProComp.richText = true;
+
         Togl = transform.Find("MM_Foldout/Background_Button").GetComponent<Toggle>();
         Togl.onValueChanged = new();
         Togl.isOn = defaultState;

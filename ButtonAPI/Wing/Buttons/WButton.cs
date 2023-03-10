@@ -31,6 +31,7 @@ public class WButton : WingBtnControls
         TMProCompnt.transform.localPosition = new Vector3(-82, 0, 0);
         HeaderTMProCompnt = transform.Find("Text_Header").GetComponent<TextMeshProUGUIEx>();
         HeaderTMProCompnt.text = Header;
+        HeaderTMProCompnt.richText = true;
         ButtonCompnt = transform.GetComponent<Button>();
         ButtonCompnt.onClick = new Button.ButtonClickedEvent();
         onClickAction = listener;

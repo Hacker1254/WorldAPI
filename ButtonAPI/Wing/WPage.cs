@@ -34,7 +34,9 @@ public class WPage
         menuContents = gameObject.transform.Find("ScrollRect/Viewport/VerticalLayoutGroup");
         menuContents.GetComponent<VerticalLayoutGroup>().childForceExpandWidth = true;
         menuContents.DestroyChildren();
-        gameObject.transform.Find("WngHeader_H1/LeftItemContainer/Text_QM_H2 (1)").GetComponent<TextMeshProUGUIEx>().text = pageName + Guid.NewGuid();
+        var ttext = gameObject.transform.Find("WngHeader_H1/LeftItemContainer/Text_QM_H2 (1)").GetComponent<TextMeshProUGUIEx>(); 
+        ttext.text = pageName + Guid.NewGuid();
+        ttext.richText = true;
         if (wingSide == WingSide.Left) 
             QMUtils.GetWngLMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
         else 

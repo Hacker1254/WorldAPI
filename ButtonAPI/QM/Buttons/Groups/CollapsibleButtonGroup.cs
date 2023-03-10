@@ -27,6 +27,7 @@ public class CollapsibleButtonGroup : Root
         headerObj.name = $"{text}_CollapsibleButtonGroup";
 
         TMProCompnt = headerObj.transform.Find("Label").GetComponent<TMPro.TextMeshProUGUI>();
+        TMProCompnt.richText = true;
         TMProCompnt.text = text;
 
         buttonGroup = new(parent, string.Empty, true);

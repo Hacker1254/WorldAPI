@@ -23,6 +23,7 @@ public class ButtonGroup : ButtonGrp
             headerGameObject = Object.Instantiate(APIBase.ButtonGrpText, parent);
             TMProCompnt = headerGameObject.GetComponentInChildren<TextMeshProUGUI>(true);
             TMProCompnt.text = text;
+            TMProCompnt.richText = true;
             Text = text;
         }
 

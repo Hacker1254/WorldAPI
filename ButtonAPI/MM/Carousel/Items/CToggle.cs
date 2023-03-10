@@ -26,6 +26,7 @@ public class CToggle
 
         TMProComp = transform.Find("LeftItemContainer/Text_MM_H3").GetComponent<TextMeshProUGUI>();
         TMProComp.text = text;
+        TMProComp.richText = true;
         Text = text;
 
         ToolTip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();

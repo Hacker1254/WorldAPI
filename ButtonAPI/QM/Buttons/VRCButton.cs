@@ -33,6 +33,7 @@ namespace WorldAPI.Buttons
             TMProCompnt = transform.GetComponentInChildren<TextMeshProUGUI>();
             Text = text;
             TMProCompnt.text = text;
+            TMProCompnt.richText = true;
             ButtonCompnt = transform.GetComponent<Button>();
             ButtonCompnt.onClick = new Button.ButtonClickedEvent();
             onClickAction = listener;
