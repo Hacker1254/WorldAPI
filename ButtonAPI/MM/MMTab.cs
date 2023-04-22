@@ -38,8 +38,6 @@ public class MMTab
         }
         else gameObject.transform.Find("Icon").gameObject.active = false;
 
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = toolTip;
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = toolTip;
 
         gameObject.GetOrAddComponent<StyleElement>().field_Private_Selectable_0 = gameObject.GetOrAddComponent<Button>();
         gameObject.GetOrAddComponent<Button>().onClick.AddListener(new Action(() => Menu.gameObject.SetActive(true)));
@@ -66,8 +64,6 @@ public class MMTab
         }
         else gameObject.transform.Find("Icon").gameObject.active = false;
 
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = toolTip;
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = toolTip;
 
         gameObject.GetOrAddComponent<StyleElement>().field_Private_Selectable_0 = gameObject.GetOrAddComponent<Button>();
         gameObject.GetOrAddComponent<Button>().onClick.AddListener(new Action(() => Menu.gameObject.SetActive(true)));

@@ -47,8 +47,6 @@ public class WButton : WingBtnControls
             TMProCompnt.transform.localPosition = new Vector3(-111, 0, 0);
         }
 
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = toolTip;
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = toolTip;
         gameObject.transform.Find("Icon_JumpToMM").gameObject.active = SubMenu;
         if (!string.IsNullOrEmpty(APIBase.autoColorHex)) RecolorBackGrn(APIBase.autoColorHex, "Background");
     }
@@ -78,8 +76,6 @@ public class WButton : WingBtnControls
         else
             transform.transform.Find("Container/Icon").gameObject.active = false;
 
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = toolTip;
-        gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = toolTip;
         if (!string.IsNullOrEmpty(APIBase.autoColorHex)) RecolorBackGrn(APIBase.autoColorHex);
     }
 }

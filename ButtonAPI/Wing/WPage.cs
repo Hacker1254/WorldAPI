@@ -37,10 +37,8 @@ public class WPage
         var ttext = gameObject.transform.Find("WngHeader_H1/LeftItemContainer/Text_QM_H2 (1)").GetComponent<TextMeshProUGUIEx>(); 
         ttext.text = pageName + Guid.NewGuid();
         ttext.richText = true;
-        if (wingSide == WingSide.Left) 
-            QMUtils.GetWngLMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
-        else 
-            QMUtils.GetWngRMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
+        if (wingSide == WingSide.Left) QMUtils.GetWngLMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
+        else QMUtils.GetWngRMenuStateControllerInstance.field_Private_Dictionary_2_String_UIPage_0.Add(pageName + Guid.NewGuid(), page);
 
         page.transform.Find("ScrollRect").GetComponent<VRC.UI.Elements.Controls.ScrollRectEx>().field_Public_Boolean_0 = true;
         page.GetComponent<Canvas>().enabled = true;

@@ -26,12 +26,12 @@ namespace WorldAPI.ButtonAPI.Buttons
                 menu = APIBase.Button.parent;
             else if (menu == null && APIBase.LastButtonParent != null)
                 menu = APIBase.LastButtonParent;
-            if (OffTooltip == null) OffTooltip = $"Turn On {text.Replace("\n", string.Empty)}";
-            if (OnToolTip == null) OnToolTip = $"Turn Off {text.Replace("\n", string.Empty)}";
+            OffTooltip ??= $"Turn On {text.Replace("\n", string.Empty)}";
+            OnToolTip ??= $"Turn Off {text.Replace("\n", string.Empty)}";
 
             Transform transform = Object.Instantiate(APIBase.Toggle, menu);
             gameObject = transform.gameObject;
-
+            if (gameObject.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>() != null) Object.Destroy(gameObject.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>());
             transform.gameObject.SetActive(true);
 
             TMProCompnt = transform.GetComponentInChildren<TextMeshProUGUI>();

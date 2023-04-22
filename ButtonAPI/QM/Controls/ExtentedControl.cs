@@ -20,10 +20,12 @@ namespace WorldAPI.ButtonAPI.Controls
 
         public string SetToolTip(string tip)
         {
+            int i = 0;
             var tooltip = gameObject.GetComponentsInChildren<VRC.UI.Elements.Tooltips.UiTooltip>();
             foreach (var s in tooltip) {
-                s.field_Public_String_0 = tip;
-                s.enabled = !string.IsNullOrEmpty(tip);
+                s.Method_Public_UiTooltip_String_0(tip);
+                i++;
+                s.enabled = !string.IsNullOrEmpty(tip) && i == 1;
             }
             ToolTip = tip;
             return tip;

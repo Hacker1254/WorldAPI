@@ -41,9 +41,6 @@ public class CSlider
         });
         gameObject.transform.Find("SliderContainer/NoiseSuppressionButton").gameObject.active = false;
 
-        var tip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-        tip.field_Public_String_0 = toolTip;
-        tip.field_Public_String_1 = toolTip;
     }
 
     //public void AddToggle(Action<bool> listener) { 

@@ -40,19 +40,15 @@ namespace WorldAPI.ButtonAPI
             badgeGameObject = gameObject.transform.GetChild(0).gameObject;
             badgeText = badgeGameObject.GetComponentInChildren<TextMeshProUGUI>();
             menuTab.gameObject.GetOrAddComponent<StyleElement>().field_Private_Selectable_0 = menuTab.gameObject.GetOrAddComponent<Button>();
-            menuTab.gameObject.GetOrAddComponent<Button>().onClick.AddListener((Action)delegate
-            {
+            GameObject.Destroy(menuTab.gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>());
+            var tooltipObj = menuTab.gameObject.GetOrAddComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
+
+            //if (!string.IsNullOrEmpty(tooltip)) tooltipObj.field_Public_String_0 = tooltip;
+            //else tooltipObj.enabled = false;
+            menuTab.gameObject.GetOrAddComponent<Button>().onClick.AddListener((Action)delegate {
                 menuTab.gameObject.GetOrAddComponent<StyleElement>().field_Private_Selectable_0 = menuTab.gameObject.GetOrAddComponent<Button>();
                     Menu.OpenMenu();
-                if (OnClick != null)
-                OnClick.Invoke();
-
-                var tooltipObj = menuTab.gameObject.GetOrAddComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-
-                if (!string.IsNullOrEmpty(tooltip))
-                    tooltipObj.field_Public_String_0 = tooltip;
-                else
-                    tooltipObj.enabled = false;
+                OnClick?.Invoke();
             });
         }
 

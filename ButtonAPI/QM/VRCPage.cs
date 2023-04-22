@@ -92,7 +92,7 @@ namespace WorldAPI.ButtonAPI
                 {
                     extButtonGameObject.GetComponentInChildren<Button>().onClick.AddListener(expandButtonAction);
                 }
-                extButtonGameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = expandButtonTooltip;
+                //extButtonGameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = expandButtonTooltip;
                 if (expandButtonSprite != null) {
                     extButtonGameObject.GetComponentInChildren<Image>().sprite = expandButtonSprite;
                     extButtonGameObject.GetComponentInChildren<Image>().overrideSprite = expandButtonSprite;
@@ -115,7 +115,7 @@ namespace WorldAPI.ButtonAPI
                         if (child.name == "Header_H1" || child.name == "ScrollRect") continue;  // Kitten is Gae
                         else Object.Destroy(child); // Kitten is Gae
 
-                gameObject.transform.Find("ScrollRect/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
+                gameObject.transform.Find("ScrollRect/Viewport").GetComponent<RectMask2D>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
                 gameObject.transform.Find("ScrollRect").GetComponent<VRC.UI.Elements.Controls.ScrollRectEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the QM
 
                 page.GetComponent<Canvas>().enabled = true; // Fix for Late Menu Creation
@@ -138,7 +138,6 @@ namespace WorldAPI.ButtonAPI
             obj.GetComponentInChildren<Button>().onClick.AddListener(onClick);
             obj.GetComponentInChildren<Image>().sprite = icon;
             obj.GetComponentInChildren<Image>().overrideSprite = icon;
-            obj.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = tooltip;
         }
 
 

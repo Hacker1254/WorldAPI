@@ -49,6 +49,7 @@ namespace WorldAPI.Buttons
                 ResetTextPox();
             }
             Object.Destroy(transform.transform.Find("Icon_Secondary").gameObject);
+            if (gameObject.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>() != null) Object.Destroy(gameObject.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>());
             gameObject.transform.Find("Badge_MMJump").gameObject.SetActive(SubMenuIcon);
             this.SetToolTip(tooltip);
             if (Half) TurnHalf(Type, IsGroup);

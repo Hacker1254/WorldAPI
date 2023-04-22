@@ -71,7 +71,7 @@ namespace WorldAPI
                 return false;
             }
             if ((MMM = GameObject.Find("Canvas_MainMenu(Clone)")) == null) {
-                Logs.Error("MainMenu Is Null!");
+                Logs.Error("MainMenu Is Null!"); 
                 return false;
             }
             if ((Button = QuickMenu.transform.Find("CanvasGroup/Container/Window/QMParent/Menu_Dashboard/ScrollRect/Viewport/VerticalLayoutGroup/Buttons_QuickActions/Button_Respawn")) == null) {
@@ -118,52 +118,52 @@ namespace WorldAPI
                 Logs.Error("WPageTemplate Is Null!");
                 return false;
             }
-            if ((WBtnTemplate = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup/Button_Profile").gameObject) == null) {
-                Logs.Error("WBtnTemplate Is Null!");
-                return false;
-            }
-            if ((WBtnPgTemplate = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/Profile/ScrollRect/Viewport/VerticalLayoutGroup/InfoPanel/Status").gameObject) == null) {
-                Logs.Error("WBtnPgTemplate Is Null!");
-                return false;
-            }
-            if (WBtnPgTemplate.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>() != null)
-                GameObject.Destroy(WBtnPgTemplate.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>()); // Fuck Analytics
-            if ((WRDefMenu = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Right/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup").gameObject) == null) {
-                Logs.Error("WRDefMenu Is Null!");
-                return false;
-            }
-            if ((WLDefMenu = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup").gameObject) == null) {
-                Logs.Error("WLDefMenu Is Null!");
-                return false;
-            }
-            if ((MMMpageTemplate = MMM.transform.Find("Container/MMParent/Menu_MM_Profile").gameObject) == null) {
-                Logs.Error("Main Menu Template Is Null!");
-                return false;
-            }
-            if ((MMMCarouselPageTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings").gameObject) == null) {
-                Logs.Error("Menu_Settings Is Null!");
-                return false;
-            }
-            if ((MMMCarouselButtonTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/Viewport/VerticalLayoutGroup/Cell_MM_Audio & Voice").gameObject) == null) {
-                Logs.Error("MMMCarouselButtonTemplate Is Null!");
-                return false;
-            }
-            if ((MMCTgl = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Comfort/Settings_Panel_1/VerticalLayoutGroup/AFKDetection").gameObject) == null) {
-                Logs.Error("MMCTgl Is Null!");
-                return false;
-            }
-            if ((MMBtnGRP = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Safety").gameObject) == null) {
-                Logs.Error("MMBtnGRP Is Null!");
-                return false;
-            }
-            if ((MMSlider = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Audio&Voice/Microphone/Settings_Panel_1/VerticalLayoutGroup/MicOutputVolume").gameObject) == null) {
-                Logs.Error("MMSlider Is Null!");
-                return false;
-            }
-            if ((MMMTabTemplate = MMM.transform.Find("Container/PageButtons/HorizontalLayoutGroup/Page_Profile").gameObject) == null) {
-                Logs.Error("Main Menu Tab Is Null!");
-                return false;
-            }
+            //if ((WBtnTemplate = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup/Button_Profile").gameObject) == null) {
+            //    Logs.Error("WBtnTemplate Is Null!");
+            //    return false;
+            //}
+            //if ((WBtnPgTemplate = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/Profile/ScrollRect/Viewport/VerticalLayoutGroup/InfoPanel/Status").gameObject) == null) {
+            //    Logs.Error("WBtnPgTemplate Is Null!");
+            //    return false;
+            //}
+            //if (WBtnPgTemplate.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>() != null)
+            //    GameObject.Destroy(WBtnPgTemplate.GetComponent<VRC.UI.Elements.Analytics.AnalyticsController>()); // Fuck Analytics
+            //if ((WRDefMenu = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Right/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup").gameObject) == null) {
+            //    Logs.Error("WRDefMenu Is Null!");
+            //    return false;
+            //}
+            //if ((WLDefMenu = QuickMenu.transform.Find("CanvasGroup/Container/Window/Wing_Left/Container/InnerContainer/WingMenu/ScrollRect/Viewport/VerticalLayoutGroup").gameObject) == null) {
+            //    Logs.Error("WLDefMenu Is Null!");
+            //    return false;
+            //}
+            //if ((MMMpageTemplate = MMM.transform.Find("Container/MMParent/Menu_MM_Profile").gameObject) == null) {
+            //    Logs.Error("Main Menu Template Is Null!");
+            //    return false;
+            //}
+            //if ((MMMCarouselPageTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings").gameObject) == null) {
+            //    Logs.Error("Menu_Settings Is Null!");
+            //    return false;
+            //}
+            //if ((MMMCarouselButtonTemplate = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/Viewport/VerticalLayoutGroup/Cell_MM_Audio & Voice").gameObject) == null) {
+            //    Logs.Error("MMMCarouselButtonTemplate Is Null!");
+            //    return false;
+            //}
+            //if ((MMCTgl = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Comfort/Settings_Panel_1/VerticalLayoutGroup/AFKDetection").gameObject) == null) {
+            //    Logs.Error("MMCTgl Is Null!");
+            //    return false;
+            //}
+            //if ((MMBtnGRP = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Comfort&Safety/Safety").gameObject) == null) {
+            //    Logs.Error("MMBtnGRP Is Null!");
+            //    return false;
+            //}
+            //if ((MMSlider = MMM.transform.Find("Container/MMParent/Menu_Settings/Menu_MM_DynamicSidePanel/Panel_SectionList/ScrollRect_Navigation/ScrollRect_Content/Viewport/VerticalLayoutGroup/Audio&Voice/Microphone/Settings_Panel_1/VerticalLayoutGroup/MicOutputVolume").gameObject) == null) {
+            //    Logs.Error("MMSlider Is Null!");
+            //    return false;
+            //}
+            //if ((MMMTabTemplate = MMM.transform.Find("Container/PageButtons/HorizontalLayoutGroup/Page_Profile").gameObject) == null) {
+            //    Logs.Error("Main Menu Tab Is Null!");
+            //    return false;
+            //}
             HasChecked = true;
             return true;
         }

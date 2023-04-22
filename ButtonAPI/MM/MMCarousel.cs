@@ -60,8 +60,8 @@ public class MMCarousel
             scrolNav.transform.Find("Viewport/VerticalLayoutGroup").GetComponent<Canvas>().enabled = true;
             scrolNav.transform.Find("Viewport/VerticalLayoutGroup").GetComponent<GraphicRaycaster>().enabled = true;
             scrolNav.transform.Find("ScrollRect_Content").GetComponent<VRC.UI.Elements.Controls.ScrollRectEx>().field_Public_Boolean_0 = true;
-            scrolNav.transform.Find("ScrollRect_Content/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the Menu
-            scrolNav.transform.Find("Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the Menu
+            //scrolNav.transform.Find("ScrollRect_Content/Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the Menu
+            //scrolNav.transform.Find("Viewport").GetComponent<RectMask2DEx>().field_Public_Boolean_0 = true; // Fixes the items falling off of the Menu
 
             ImageComp = scrolNav.transform.Find("Viewport/VerticalLayoutGroup/DynamicSidePanel_Header/Icon").GetComponent<Image>();
             ImageComp.transform.localScale = new(0.8f, 0.8f, 0.8f);
@@ -117,9 +117,7 @@ public class MMCarousel
             if (obj.name != "Icon") continue;
             obj.sprite = sprite1; 
         }
-        var Logouttooltip = LogOutBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-        Logouttooltip.field_Public_String_0 = toolTip1;
-        Logouttooltip.field_Public_String_1 = toolTip1;
+
 
         var ExitBRN = ExitBtn.GetComponent<Button>();
         ExitBRN.onClick = new();
@@ -132,9 +130,6 @@ public class MMCarousel
             if (obj.name != "Icon") continue;
             obj.sprite = sprite2;
         }
-        var exittooltip = ExitBtn.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-        exittooltip.field_Public_String_0 = toolTip2;
-        exittooltip.field_Public_String_1 = toolTip2;
 
         LogOutBtn.gameObject.active = true;
         ExitBtn.gameObject.active = true;

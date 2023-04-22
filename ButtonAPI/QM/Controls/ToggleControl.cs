@@ -1,4 +1,5 @@
-﻿using System;
+﻿using I2.Loc;
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,6 +15,7 @@ namespace WorldAPI.ButtonAPI.Controls
         public Image OnImage { get; internal set; }
         public Image OffImage { get; internal set; }
         internal static VRCToggle inst { get; set; }
+
 
     public bool State
         {
@@ -84,8 +86,11 @@ namespace WorldAPI.ButtonAPI.Controls
 
         public string SetToolTip(string tip, string tip2)
         {
-            gameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = tip;
-            gameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = tip2;
+            var TipComp = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
+            GameObject.Destroy(TipComp);
+            TipComp = gameObject.AddComponent<VRC.UI.Elements.Tooltips.UiToggleTooltip>();
+            TipComp.Method_Public_UiTooltip_String_1(tip2);
+            TipComp.Method_Public_UiTooltip_String_0(tip);
             return tip;
         }
     }

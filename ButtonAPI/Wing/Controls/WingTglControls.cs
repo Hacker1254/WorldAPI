@@ -34,8 +34,7 @@ public class WingTglControls : Root
 
     public string SetToolTip(string tip)
     {
-        gameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_1 = tip;
-        gameObject.GetComponentInChildren<VRC.UI.Elements.Tooltips.UiTooltip>().field_Public_String_0 = tip;
+
         return tip;
     }
 }

@@ -31,9 +31,9 @@ public class CMenu
         TMProComp.text = buttonText;
         TMProComp.richText = true;
 
-        ToolTip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-        ToolTip.field_Public_String_0 = toolTip;
-        ToolTip.field_Public_String_1 = toolTip;
+        //ToolTip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
+        //ToolTip.field_Public_String_0 = toolTip;
+        //ToolTip.field_Public_String_1 = toolTip;
 
         buttonCom = gameObject.GetComponent<Button>();
         buttonCom.onClick = new();

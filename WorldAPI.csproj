@@ -77,6 +77,7 @@
     <Reference Include="Assembly-CSharp">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\WorldLoader\UnhollowedAsm\Assembly-CSharp.dll</HintPath>
     </Reference>
+    <Reference Include="I2Loc, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="IL2CppGen">
       <HintPath>..\..\Program Files (x86)\Steam\steamapps\common\VRChat\IL2CppGen.dll</HintPath>
     </Reference>

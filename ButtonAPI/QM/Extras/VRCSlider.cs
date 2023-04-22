@@ -37,9 +37,9 @@ public class VRCSlider : Root
         TMProCompnt = transform.Find("Text_Name").GetComponent<TextMeshProUGUIEx>();
         TMProCompnt.text = text;
         TMProCompnt.transform.localPosition = new Vector3(-386.4344f, 24.1347f, 0);
-        var tip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
-        tip.field_Public_String_0 = tooltip;
-        tip.field_Public_String_1 = tooltip;
+        //var tip = gameObject.GetComponent<VRC.UI.Elements.Tooltips.UiTooltip>();
+        //tip.field_Public_String_0 = tooltip;
+        //tip.field_Public_String_1 = tooltip;
         var layOut = gameObject.GetComponent<UnityEngine.UI.LayoutElement>();
         layOut.preferredHeight = 111;
 
